@@ -4,7 +4,11 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     color: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
 }
+
 
 .glowing-text {
     font-size: 2rem;
