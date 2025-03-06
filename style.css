@@ -1,3 +1,4 @@
+/* General Styling */
 body {
     background: url('deepti.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -9,7 +10,7 @@ body {
     height: 100vh;
 }
 
-
+/* Glowing Text Effect */
 .glowing-text {
     font-size: 2rem;
     font-weight: bold;
@@ -27,6 +28,7 @@ body {
     }
 }
 
+/* Button Styling */
 .btn {
     background-color: pink;
     border: none;
@@ -37,6 +39,12 @@ body {
     border-radius: 20px;
 }
 
+.btn:hover {
+    background-color: red;
+    color: white;
+}
+
+/* Message Box */
 #message-box {
     background: rgba(255, 182, 193, 0.9);
     padding: 20px;
@@ -52,6 +60,7 @@ body {
     display: none;
 }
 
+/* Floating Love Messages */
 .love-message {
     position: absolute;
     font-size: 1.5rem;
@@ -63,4 +72,10 @@ body {
 @keyframes floatUp {
     from { transform: translateY(50px); opacity: 1; }
     to { transform: translateY(-100px); opacity: 0; }
+}
+
+/* Falling Hearts */
+@keyframes fall {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100vh); }
 }

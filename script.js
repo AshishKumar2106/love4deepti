@@ -1,7 +1,23 @@
+// Function to Show the Surprise Message
 function showSurprise() {
     document.getElementById("message-box").classList.remove("hidden");
 }
 
+// Function to Toggle Music
+function toggleMusic() {
+    let audio = document.getElementById("background-music");
+    let pauseButton = document.querySelector(".pause-btn");
+
+    if (audio.paused) {
+        audio.play();
+        pauseButton.textContent = "⏸️ Pause Music";
+    } else {
+        audio.pause();
+        pauseButton.textContent = "▶️ Play Music";
+    }
+}
+
+// Function to Shower Love Hearts
 function showerLove() {
     const heart = document.createElement("div");
     heart.innerHTML = "❤️";
@@ -17,15 +33,7 @@ function showerLove() {
     }, 3000);
 }
 
-function toggleMusic() {
-    let audio = document.getElementById("background-music");
-    if (audio.paused) {
-        audio.play();
-    } else {
-        audio.pause();
-    }
-}
-
+// Function to Show Floating Love Messages
 function showLoveMessage() {
     const messages = [
         "You are my sunshine ☀️",
@@ -45,4 +53,5 @@ function showLoveMessage() {
     }, 3000);
 }
 
+// Show love messages every 2 seconds
 setInterval(showLoveMessage, 2000);
