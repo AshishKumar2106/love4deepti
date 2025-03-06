@@ -28,3 +28,15 @@ function createHeart() {
 
 // Generate a heart every 300ms
 setInterval(createHeart, 300);
+
+document.getElementById("playMusic").addEventListener("click", function () {
+    const music = document.getElementById("loveMusic");
+
+    if (music.paused) {
+        music.play();
+        this.innerText = "⏸ Pause Music";
+    } else {
+        music.pause();
+        this.innerText = "🎶 Play Romantic Music";
+    }
+});
