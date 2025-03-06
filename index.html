@@ -8,25 +8,48 @@
 </head>
 <body>
 
-    <div class="heart"></div>
+    <!-- Infinite Love Heart -->
+    <div class="heart-container">
+        <div class="heart">❤️</div>
+        <h1>I Love You, Deepti! ♾️</h1>
+    </div>
+
+    <!-- Falling Hearts Animation -->
+    <div id="heart-container"></div>
+
+    <!-- Love Message Generator -->
     <div class="message-box">
         <p id="loveMessage">Click the button for a sweet message! 💕</p>
         <button onclick="generateMessage()">💌 Surprise Me!</button>
     </div>
-    <div id="heart-container"></div>
+
+    <!-- Love Letter Section -->
+    <div class="love-letter">
+        <h2>Dear Deepti, ❤️</h2>
+        <p id="letterText">
+            My love for you is infinite, just like the stars in the sky. ✨  
+            Every moment with you is magical, and every day, I fall more deeply in love with you.  
+            You are the reason my heart beats, the light in my darkest nights, and the joy in my happiest moments.  
+            I promise to always cherish you, love you, and stand by your side, forever and always. 💖  
+            <br><br>
+            With all my heart,  
+            Yours forever. ❤️  
+        </p>
+    </div>
+
+    <!-- Romantic Music -->
     <audio id="loveMusic" loop>
         <source src="your-music-file.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-    <canvas id="confettiCanvas"></canvas>
-<button id="startConfetti">🎇 Shower Love</button>
-
-    
     <button id="playMusic">🎶 Play Romantic Music</button>
-    
 
-    
+    <!-- Love Confetti Button -->
+    <canvas id="confettiCanvas"></canvas>
+    <button id="startConfetti">🎇 Shower Love</button>
+
+    <!-- Link to JavaScript -->
     <script src="script.js"></script>
-    
+
 </body>
 </html>
