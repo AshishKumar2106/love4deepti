@@ -98,3 +98,32 @@ h1 {
     background-color: darkred;
     transform: scale(1.1);
 }
+.glowing-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: pink;
+    text-shadow: 0 0 10px red, 0 0 20px hotpink, 0 0 30px purple;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px red, 0 0 20px hotpink, 0 0 30px purple;
+    }
+    to {
+        text-shadow: 0 0 20px red, 0 0 30px hotpink, 0 0 40px purple;
+    }
+}
+
+.love-message {
+    position: absolute;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: red;
+    animation: floatUp 3s linear;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(50px); opacity: 1; }
+    to { transform: translateY(-100px); opacity: 0; }
+}

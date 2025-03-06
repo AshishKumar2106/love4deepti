@@ -66,3 +66,24 @@ window.onload = function() {
     let audio = new Audio('your-music-file.mp3'); // Replace with your song file
     audio.play();
 };
+
+function showLoveMessage() {
+    const messages = [
+        "You are my sunshine ☀️",
+        "My heart beats for you ❤️",
+        "Forever yours 💞",
+        "You make my world beautiful 🌍",
+        "I love you more than words can say 😘"
+    ];
+
+    let msg = document.createElement("div");
+    msg.innerText = messages[Math.floor(Math.random() * messages.length)];
+    msg.classList.add("love-message");
+    document.body.appendChild(msg);
+
+    setTimeout(() => {
+        msg.remove();
+    }, 3000);
+}
+
+setInterval(showLoveMessage, 2000);
