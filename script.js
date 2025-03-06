@@ -12,3 +12,19 @@ function generateMessage() {
     let randomIndex = Math.floor(Math.random() * messages.length);
     document.getElementById("loveMessage").innerText = messages[randomIndex];
 }
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw"; // Random position
+    heart.style.animationDuration = Math.random() * 2 + 3 + "s"; // Random fall speed
+
+    document.getElementById("heart-container").appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove(); // Remove heart after animation
+    }, 5000);
+}
+
+// Generate a heart every 300ms
+setInterval(createHeart, 300);
