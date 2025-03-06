@@ -1,26 +1,74 @@
 body {
-    background-color: #ffcccb;
-    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+}
+
+.heart {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    transform: rotate(-45deg);
+    animation: heartbeat 1.5s infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    left: 50px;
+    top: 0;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1) rotate(-45deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(-45deg);
+    }
+    100% {
+        transform: scale(1) rotate(-45deg);
+    }
+}
+.message-box {
     text-align: center;
-    padding: 50px;
+    margin-top: 20px;
 }
-.container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 500px;
-    margin: auto;
+
+#loveMessage {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 10px;
 }
-h1 {
-    color: #e60073;
-}
-p {
+
+button {
+    background-color: pink;
+    color: red;
+    border: none;
+    padding: 10px 20px;
     font-size: 18px;
-    color: #333;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
 }
-img {
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 15px;
+
+button:hover {
+    background-color: red;
+    color: white;
 }
