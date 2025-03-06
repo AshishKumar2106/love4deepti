@@ -40,3 +40,47 @@ document.getElementById("playMusic").addEventListener("click", function () {
         this.innerText = "🎶 Play Romantic Music";
     }
 });
+const canvas = document.getElementById("confettiCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const confetti = [];
+
+function createConfetti() {
+    const colors = ["#ff0000", "#ff66b2", "#ffcccc", "#ff3399"];
+    for (let i = 0; i < 50; i++) {
+        confetti.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 8 + 4,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            speedY: Math.random() * 3 + 2,
+            speedX: (Math.random() - 0.5) * 2
+        });
+    }
+}
+
+function drawConfetti() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    confetti.forEach((particle, index) => {
+        ctx.beginPath();
+        ctx.fillStyle = particle.color;
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fill();
+        
+        particle.y += particle.speedY;
+        particle.x += particle.speedX;
+
+        if (particle.y > canvas.height) {
+            confetti.splice(index, 1);
+        }
+    });
+    requestAnimationFrame(drawConfetti);
+}
+
+document.getElementById("startConfetti").addEventListener("click", function () {
+    createConfetti();
+    drawConfetti();
+});
